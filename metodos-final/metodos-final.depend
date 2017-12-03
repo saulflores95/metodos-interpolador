@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1512277904 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\main.c
+	"My_Math.h"
+	"My_Roots.h"
+	"My_Poli_Roots.h"
+	"My_Matrix.h"
+	"My_Reg_Inter.h"
+	"My_Intergral_dif.h"
+	"My_Final_Project.h"
+
+1511953971 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_math.h
+	<stdio.h>
+	<stdlib.h>
+	<float.h>
+
+1511953971 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.h
+	"My_Math.h"
+
+1511953971 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_poli_roots.h
+	"My_Math.h"
+
+1511953971 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_matrix.h
+	"My_Math.h"
+
+1511957629 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_reg_inter.h
+	"My_Matrix.h"
+
+1511954635 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_intergral_dif.h
+	"My_Math.h"
+	"My_Matrix.h"
+
+1512276254 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.h
+	"My_Intergral_dif.h"
+	"My_Reg_Inter.h"
+
