@@ -9,6 +9,6 @@ int main() {
     //Proyecto Final Metodos Numericos
     printf("\tInterpolador con Best Fitt\n");
     Interpolador(0.0, 2.0, 1.0, 4.0);
-    Integrador(10, 0.5);
+    //Integrador(10, 0.5);
     return 0;
 }

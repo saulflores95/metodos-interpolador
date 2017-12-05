@@ -7,13 +7,12 @@ float FuncEval(float x, float y){
 
 double Integrador(double P, double x) {
     printf("Integrador activado...");
-    double newton = NewtonRapson(0.5, 5);
+    //double newton = NewtonRapson(0.5, 5);
     //printf("\nNewton: %f", newton);
     printf("\nSimpson %f", Simpson3M(-10, 5, 500));
     return (Simpson3M(-10, 5, 500) - P);
 
 }
-
 
 matriz RoungeKoutta(float xi, float yi, float xf) {
     double k1, k2, k3, k4;
@@ -38,7 +37,7 @@ matriz RoungeKoutta(float xi, float yi, float xf) {
 }
 
 float Correlacion(matriz mat) {
-    printf("\n\n\tFuncion de correlacion activada...");
+ //   printf("\n\n\tFuncion de correlacion activada...");
     int i;
     float sumatoriaXY, sumatoriaXi, sumatoriaX2, sumatoriaYi, sumatoriaY2, ans;
     sumatoriaX2 = sumatoriaXi = sumatoriaXY = sumatoriaYi = sumatoriaY2 = ans = 0.0;
@@ -53,20 +52,34 @@ float Correlacion(matriz mat) {
     divisor = mat.ren * sumatoriaXY - sumatoriaXi * sumatoriaYi;
     dividendo = sqrt(mat.ren * sumatoriaX2 - MyPow(sumatoriaXi, 2)) * sqrt((mat.ren * sumatoriaY2 - MyPow(sumatoriaYi, 2)));
     ans = divisor /dividendo;
-    printf("\n\t Correlacion es: %f", ans);
+ //   printf("\n\t Correlacion es: %f", ans);
     return(ans);
 }
 
 void BestFit(matriz t, float x) {
-    /*
-    float linearReg = RegLinBestFit(t); //Lineal -> a0 + a1X -
-    float cuadraticReg = RegCuadBestFit(t,x);//Cuadratica -> a0 + a1X + a2X^2 x -
-    float cubicReg = RegCubicBestFit(t, x);//Cubica -> a0 + a1X + a2X^2 + a3X^3 x -
-    float expontialReg = RegExpBestFit(t);//Exponencial -> a0 + e^(A1X) -
-    float logaritmicReg = RegLnBestFit(t);//Logaritmica -> a0 + a1 * ln(x) -
-    float inverseReg = RegInvBestFit(t);//Inversa -> a0 + a1/x
-    float potenciaReg = RegPowBestFit(t);//Potencia -> a0*X^a1
-    */
+    matriz Array = {7, 1};
+    int i = 0;
+    int idx = 0;
+    float myNumber = 1.0;
+    float theNumber = 0.0;
+    float linearReg =  Array.mtx[0][0]=  RegLinBestFit(t); //Lineal -> a0 + a1X -
+    float cuadraticReg = Array.mtx[1][0] = RegCuadBestFit(t,x);//Cuadratica -> a0 + a1X + a2X^2 x -
+    float cubicReg = Array.mtx[2][0] = RegCubicBestFit(t, x);//Cubica -> a0 + a1X + a2X^2 + a3X^3 x -
+    float expontialReg = Array.mtx[3][0] = RegExpBestFit(t);//Exponencial -> a0 + e^(A1X) -
+    float logaritmicReg = Array.mtx[4][0] = RegLnBestFit(t);//Logaritmica -> a0 + a1 * ln(x) -
+    float inverseReg = Array.mtx[5][0] = RegInvBestFit(t);//Inversa -> a0 + a1/x
+    float potenciaReg = Array.mtx[6][0] =RegPowBestFit(t);//Potencia -> a0*X^a1
+    float distance = Abs(Array.mtx[0][0] - myNumber);
+    for(i; i < Array.ren; i++) {
+        float idistance = Abs(Array.mtx[i][0] - myNumber);
+        if(idistance < distance){
+            idx = i;
+            distance = idistance;
+        }
+    }
+    theNumber = Array.mtx[idx][0];
+    PrintMtx(Array);
+    printf("\n\tTHE NUMBER: %f", theNumber);
 }
 
 void Interpolador(float xi, float yi, float h, float xf) {

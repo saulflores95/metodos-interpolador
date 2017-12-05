@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1512448253 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\main.c
+1512449051 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\main.c
 	"My_Math.h"
 	"My_Roots.h"
 	"My_Poli_Roots.h"
@@ -33,7 +33,7 @@
 	"My_Intergral_dif.h"
 	"My_Reg_Inter.h"
 
-1512448603 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.c
+1512451099 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.c
 	"My_Final_Project.h"
 	"My_Intergral_Dif.h"
 
