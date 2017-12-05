@@ -31,6 +31,34 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="My_Final_Project.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="My_Final_Project.h" />
+		<Unit filename="My_Intergral_Dif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="My_Intergral_Dif.h" />
+		<Unit filename="My_Math.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="My_Math.h" />
+		<Unit filename="My_Matrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="My_Matrix.h" />
+		<Unit filename="My_Poli_Roots.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="My_Poli_Roots.h" />
+		<Unit filename="My_Reg_Inter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="My_Reg_Inter.h" />
+		<Unit filename="My_Roots.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="My_Roots.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

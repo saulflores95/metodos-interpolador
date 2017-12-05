@@ -163,7 +163,6 @@ float RegCubica(matriz t, float x) {
     float ans = 0.0;
     matriz a;
     a = Regresion(t, 3);
-    PrintMtx(a);
     printf("\n\tLa regresion cubica es:");
     if (a.mtx[1][0] >= 0.0 && a.mtx[2][0] >= 0.0 && a.mtx[3][0] >= 0.0) // + + +
       printf("\n\t y = %f + %f x + %f x^2 + %f x^3", a.mtx[0][0], a.mtx[1][0], a.mtx[2][0], a.mtx[3][0]);

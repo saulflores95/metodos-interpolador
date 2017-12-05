@@ -1,6 +1,5 @@
 #ifndef MY_MATH_H_INCLUDED
 #define MY_MATH_H_INCLUDED
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <float.h>

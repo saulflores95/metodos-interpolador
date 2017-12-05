@@ -12,7 +12,6 @@ matriz SumTablexy(matriz);
 matriz Regresion(matriz, int);
     //Regresion Lineal
 float RegLin(matriz, float);
-float RegTest(float);
     //Regresion de Potencia
 float RegPow(matriz, float);
     //Interpolacion por polinomios de lagrnge

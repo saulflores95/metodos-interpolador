@@ -19,7 +19,8 @@ double Fold(float x) {
 double F(double x){
   double ans;
   //ans = LogNat(x, 4) + MyPow(x, 2) - 4;
-  ans = cos(x) - x;
+  //ans = cos(x) - x;
+  ans = (1/sqrt(2 * PI)) * exp(MyPow(-x, 2) / 2);
   return (ans);
 }
 //Derivada a la funcion a estimar raiz
