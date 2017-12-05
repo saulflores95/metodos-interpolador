@@ -78,8 +78,33 @@ void BestFit(matriz t, float x) {
         }
     }
     theNumber = Array.mtx[idx][0];
-    PrintMtx(Array);
-    printf("\n\tTHE NUMBER: %f", theNumber);
+    RegresionChecker(idx, t, x);
+}
+
+void RegresionChecker(int idx, matriz t, float x) {
+    switch(idx) {
+        case 0:
+            RegLin(t, x);
+            break;
+        case 1:
+            RegCuad(t, x);
+            break;
+         case 2:
+            RegCubica(t, x);
+            break;
+        case 3:
+            RegExp(t, x);
+            break;
+        case 4:
+            RegLin(t, x);
+            break;
+        case 5:
+            RegInv(t, x);
+            break;
+        case 6:
+            RegPow(t, x);
+            break;
+    }
 }
 
 void Interpolador(float xi, float yi, float h, float xf) {
@@ -154,23 +179,6 @@ matriz RegCuadMat(matriz t, float x) {
     float ans = 0.0;
     matriz a;
     a = Regresion(t, 2);
-    printf("\n\tLa regresion cuadratica es:");
-
-    if (a.mtx[1][0] >= 0.0 && a.mtx[2][0] >= 0.0)
-      printf("\n\t y = %f + %f x + %f x^2", a.mtx[0][0], a.mtx[1][0], a.mtx[2][0]);
-
-    else if (a.mtx[1][0] < 0.0 && a.mtx[2][0] >= 0.0)
-      printf("\n\t y = %f - %f x + %f x^2", a.mtx[0][0], -a.mtx[1][0], a.mtx[2][0]);
-
-    else if (a.mtx[1][0] >= 0.0 && a.mtx[2][0] < 0.0)
-      printf("\n\t y = %f + %f x - %f x^2", a.mtx[0][0], a.mtx[1][0], -a.mtx[2][0]);
-
-    else if (a.mtx[1][0] < 0.0 && a.mtx[2][0] < 0.0)
-      printf("\n\t y = %f - %f x - %f x^2", a.mtx[0][0], -a.mtx[1][0], -a.mtx[2][0]);
-
-    ans = a.mtx[0][0] + a.mtx[1][0] * x + a.mtx[2][0], 2 * MyPow(x, 2);
-    printf("\n\t La evaluacion de Y(%f) = %f", x, ans);
-
     return (a);
 }
 
@@ -178,33 +186,7 @@ matriz RegCubicMat(matriz t, float x) {
     float ans = 0.0;
     matriz a;
     a = Regresion(t, 3);
-    printf("\n\tLa regresion cubica es:");
-    if (a.mtx[1][0] >= 0.0 && a.mtx[2][0] >= 0.0 && a.mtx[3][0] >= 0.0) // + + +
-      printf("\n\t y = %f + %f x + %f x^2 + %f x^3", a.mtx[0][0], a.mtx[1][0], a.mtx[2][0], a.mtx[3][0]);
-
-    else if (a.mtx[1][0] >= 0.0 && a.mtx[2][0] >= 0.0 && a.mtx[3][0] < 0.0) // + + -
-      printf("\n\t y = %f + %f x + %f x^2 - %f x^3", a.mtx[0][0], a.mtx[1][0], a.mtx[2][0], -a.mtx[3][0]);
-
-    else if (a.mtx[1][0] >= 0.0 && a.mtx[2][0] < 0.0 && a.mtx[3][0] >= 0.0) // + - +
-      printf("\n\t y = %f + %f x - %f x^2 + %f x^3", a.mtx[0][0], a.mtx[1][0], -a.mtx[2][0], a.mtx[3][0]);
-
-    else if (a.mtx[1][0] >= 0.0 && a.mtx[2][0] < 0.0 && a.mtx[3][0] < 0.0) // + - -
-      printf("\n\t y = %f + %f x - %f x^2 - %f x^3", a.mtx[0][0], a.mtx[1][0], -a.mtx[2][0], -a.mtx[3][0]);
-
-    else if (a.mtx[1][0] < 0.0 && a.mtx[2][0] >= 0.0 && a.mtx[3][0] >= 0.0) // - + +
-      printf("\n\t y = %f - %f x + %f x^2 + %f x^3", a.mtx[0][0], -a.mtx[1][0], a.mtx[2][0], a.mtx[3][0]);
-
-    else if (a.mtx[1][0] < 0.0 && a.mtx[2][0] >= 0.0 && a.mtx[3][0] < 0.0) // - + -
-      printf("\n\t y = %f - %f x + %f x^2 - %f x^3", a.mtx[0][0], -a.mtx[1][0], a.mtx[2][0], -a.mtx[3][0]);
-
-    else if (a.mtx[1][0] < 0.0 && a.mtx[2][0] < 0.0 && a.mtx[3][0] >= 0.0) // - - +
-      printf("\n\t y = %f - %f x - %f x^2 + %f x^3", a.mtx[0][0], -a.mtx[1][0], -a.mtx[2][0], a.mtx[3][0]);
-
-    else if (a.mtx[1][0] < 0.0 && a.mtx[2][0] < 0.0 && a.mtx[3][0] < 0.0) // - - -
-      printf("\n\t y = %f - %f x - %f x^2 - %f x^3", a.mtx[0][0], -a.mtx[1][0], -a.mtx[2][0], -a.mtx[3][0]);
-
     ans = a.mtx[0][0] + a.mtx[1][0] * x + a.mtx[2][0], 2 * MyPow(x, 2) + a.mtx[3][0] * MyPow(x, 3);
-    printf("\n\t La evaluacion de Y(%f) = %f", x, ans);
     return (a);
   }
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1512449051 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\main.c
+1512504910 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\main.c
 	"My_Math.h"
 	"My_Roots.h"
 	"My_Poli_Roots.h"
@@ -13,7 +13,7 @@
 	<stdlib.h>
 	<float.h>
 
-1511953971 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.h
+1512504910 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.h
 	"My_Math.h"
 
 1511953971 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_poli_roots.h
@@ -25,7 +25,7 @@
 1512358070 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_reg_inter.h
 	"My_Matrix.h"
 
-1511954635 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_intergral_dif.h
+1512504910 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_intergral_dif.h
 	"My_Math.h"
 	"My_Matrix.h"
 
@@ -33,15 +33,15 @@
 	"My_Intergral_dif.h"
 	"My_Reg_Inter.h"
 
-1512451099 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.c
+1512505315 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.c
 	"My_Final_Project.h"
 	"My_Intergral_Dif.h"
 
-1511954622 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_intergral_dif.c
+1512504910 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_intergral_dif.c
 	"My_Intergral_dif.h"
 	<math.h>
 
-1511953971 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_math.c
+1512504910 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_math.c
 	"My_Math.h"
 
 1511953971 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_matrix.c
@@ -53,6 +53,6 @@
 1512440451 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_reg_inter.c
 	"My_Reg_Inter.h"
 
-1512448733 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.c
+1512504910 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.c
 	"My_Roots.h"
 
