@@ -11,6 +11,8 @@ float FuncEval(float, float);
 
 float Correlacion(matriz);
 
+void RegresionChecker(int, matriz, float);
+
 void BestFit(matriz, float);
 
 void Interpolador(float xi, float yi, float h, float xf);

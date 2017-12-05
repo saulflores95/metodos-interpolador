@@ -1,8 +1,8 @@
 #include "My_Final_Project.h"
-#include "My_Intergral_Dif.h"
 
 float FuncEval(float x, float y){
-    return (2 * x);
+    //return (2 * x);
+    return (8 / (x * x));
 }
 
 double Integrador(double P, double x) {
@@ -67,7 +67,7 @@ void BestFit(matriz t, float x) {
     float cubicReg = Array.mtx[2][0] = RegCubicBestFit(t, x);//Cubica -> a0 + a1X + a2X^2 + a3X^3 x -
     float expontialReg = Array.mtx[3][0] = RegExpBestFit(t);//Exponencial -> a0 + e^(A1X) -
     float logaritmicReg = Array.mtx[4][0] = RegLnBestFit(t);//Logaritmica -> a0 + a1 * ln(x) -
-    float inverseReg = Array.mtx[5][0] = RegInvBestFit(t);//Inversa -> a0 + a1/x
+    float inverseReg = Array.mtx[5][0] = Abs(RegInvBestFit(t));//Inversa -> a0 + a1/x
     float potenciaReg = Array.mtx[6][0] =RegPowBestFit(t);//Potencia -> a0*X^a1
     float distance = Abs(Array.mtx[0][0] - myNumber);
     for(i; i < Array.ren; i++) {
@@ -78,6 +78,7 @@ void BestFit(matriz t, float x) {
         }
     }
     theNumber = Array.mtx[idx][0];
+    PrintMtx(Array);
     RegresionChecker(idx, t, x);
 }
 
@@ -109,7 +110,7 @@ void RegresionChecker(int idx, matriz t, float x) {
 
 void Interpolador(float xi, float yi, float h, float xf) {
     matriz tabla = RoungeKoutta(xi, yi, xf);
-    PrintMtx(tabla);
+    //PrintMtx(tabla);
     BestFit(tabla, 1);
     //Correlacion(tabla);
 }

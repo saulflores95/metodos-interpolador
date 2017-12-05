@@ -93,7 +93,8 @@ double NewtonRapson(double x0, int n) {
   es = Scarb(n);
   do {
     x1 = x0 - F(x0) / FD(x0);
-    es = ErrorA(x1, x0);
+    ea = ErrorA(x1, x0);
+    x0 = x1;
   }while(ea > es);
   return(x1);
 }
