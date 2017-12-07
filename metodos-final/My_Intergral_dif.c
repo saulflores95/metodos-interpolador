@@ -2,9 +2,11 @@
 #include <math.h>
 //Funcion a intergar
 double FI(float x){
+    //printf("\n Funcion a intergrar Inicializada...");
     double ans = 0.0;
     //ans = 400 * MyPow(x, 5) - 900*MyPow(x,4) + 675 * MyPow(x, 3) - 200 * MyPow(x,2) + 25 * x + 0.2;
-    ans = exp(-x * x / 2.0)/ sqrt(PI);
+    //ans = exp(-x * x / 2.0)/ sqrt(PI);
+    ans = (1/sqrt(2 * PI)) * exp(-MyPow(x, 2) / 2);
     return(ans);
 }
 //Metodo del trapecio multiple
@@ -19,16 +21,20 @@ double TrapecioM(float a, float b, int n) {
 }
 //Regla de Simpson 1/3 aplicacion multiple
 double Simpson3M(float a, float b, int n){
+    printf("\nSimpson 1/3 Multiple inicializado...");
     double ans = 0.0, sp = 0.0, si = 0.0, h; //sp = suma par y si = suma impar
     int i;
     if(Residuo(n, 2.0) != 0.0)
         n++;
     h = (b - a) / n;
-    for(i = 1; i < n - 1; i += 2)
+    for(i = 1; i <= n - 1; i += 2){
         si += FI(a + i * h);
-    for(i = 2; i < n - 2; i+= 2)
+    }
+    for(i = 2; i <= n - 2; i+= 2){
         sp += FI(a + i * h);
-    ans = (FI(a) + 4.0 * si + 2.0 * sp + FI(b) * h / 3.0);
+    }
+    ans = (FI(a) + 4.0 * si + 2.0 * sp + FI(b) )* h/ 3.0;
+    printf("\nSimpson3M: %f", ans);
     return(ans);
 }
 //Metodo rounge kutta de cuarto orden

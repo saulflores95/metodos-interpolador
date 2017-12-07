@@ -6,11 +6,10 @@ float FuncEval(float x, float y){
 }
 
 double Integrador(double P, double x) {
-    printf("Integrador activado...");
-    //double newton = NewtonRapson(0.5, 5);
-    //printf("\nNewton: %f", newton);
-    printf("\nSimpson %f", Simpson3M(-10, 5, 500));
-    return (Simpson3M(-10, 5, 500) - P);
+    printf("\tIntegrador activado...");
+    double newtonMod = NewtonRapsonMod(0.5, 5);
+    printf("\n\t\tNewton Rapson Mod: %f", newtonMod);
+    return 0.0;
 
 }
 

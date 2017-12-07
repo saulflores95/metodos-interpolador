@@ -1,11 +1,10 @@
 # depslib dependency file v1.0
-1512506557 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\main.c
+1512686814 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\main.c
 	"My_Math.h"
 	"My_Roots.h"
 	"My_Poli_Roots.h"
 	"My_Matrix.h"
 	"My_Reg_Inter.h"
-	"My_Intergral_dif.h"
 	"My_Final_Project.h"
 
 1512278678 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_math.h
@@ -13,8 +12,9 @@
 	<stdlib.h>
 	<float.h>
 
-1512504910 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.h
+1512680037 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.h
 	"My_Math.h"
+	"My_Intergral_Dif.h"
 
 1511953971 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_poli_roots.h
 	"My_Math.h"
@@ -29,14 +29,15 @@
 	"My_Math.h"
 	"My_Matrix.h"
 
-1512506200 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.h
+1512673263 c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.h
+	"My_Roots.h"
 	"My_Intergral_dif.h"
 	"My_Reg_Inter.h"
 
-1512506221 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.c
+1512680445 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_final_project.c
 	"My_Final_Project.h"
 
-1512504910 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_intergral_dif.c
+1512684745 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_intergral_dif.c
 	"My_Intergral_dif.h"
 	<math.h>
 
@@ -52,6 +53,6 @@
 1512505781 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_reg_inter.c
 	"My_Reg_Inter.h"
 
-1512504910 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.c
+1512684362 source:c:\users\saulf\documents\github\metodos-interpolador\metodos-final\my_roots.c
 	"My_Roots.h"
 

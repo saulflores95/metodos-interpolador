@@ -1,5 +1,6 @@
 #ifndef MY_FINAL_PROJECT_H_INCLUDED
 #define MY_FINAL_PROJECT_H_INCLUDED
+#include "My_Roots.h"
 #include "My_Intergral_dif.h"
 #include "My_Reg_Inter.h"
 

@@ -17,17 +17,27 @@ double Fold(float x) {
 }
 
 double F(double x){
+  printf("\nIniciado F");
   double ans;
   //ans = LogNat(x, 4) + MyPow(x, 2) - 4;
   //ans = cos(x) - x;
-  ans = (1/sqrt(2 * PI)) * exp(MyPow(-x, 2) / 2);
+  //ans = (1/sqrt(2 * PI)) * exp(-MyPow(x, 2) / 2);
+  ans = Simpson3M(-5, x, 500)- 0.75;
   return (ans);
 }
 //Derivada a la funcion a estimar raiz
 double FD(double x) {
+  printf("\nIniciado FD");
   double ans, h = 0.00390625;
-  ans = (F(x + h) - F(x - h) / (2 * h));
+  ans = ((F(x + h) - F(x - h)) / (2 * h));
   return (ans);
+}
+//Segunda derivada central
+double FD2(double x) {
+    printf("\nIniciado FD2");
+    double ans = 0.0, h = 0.00390625;
+    ans = ((F(x + h)) - 2 * F(x) + F(x - h)) / MyPow(h, 2);
+    return(ans);
 }
 //funcion que mapea la exprecion
 void Tabla(float min, float max, int n) {
@@ -88,15 +98,41 @@ double Biseccion(double xi, double xu, int n) {
   return (xr);
 }
 //metodo de newto-rapson
-double NewtonRapson(double x0, int n) {
-  double ea = 50.0, es, x1;
-  es = Scarb(n);
-  do {
-    x1 = x0 - F(x0) / FD(x0);
-    ea = ErrorA(x1, x0);
-    x0 = x1;
-  }while(ea > es);
-  return(x1);
+double NewtonRapson(double x0,int n){
+    double ea = 50.0, es, x1;
+    es = Scarb(n);
+    printf("\n\t\t F(%f): %f",x0, F(x0));
+    printf("\n\t\t FD(%f): %f",x0, FD(x0));
+    printf("\n\t\tScarb: %f" , es);
+    do{
+        x1 = x0 - F(x0) / FD(x0);
+        printf("\n\t\t En Cilco x1: %f", x1);
+        printf("\n\t\t F(%f): %f",x0, F(x0));
+        printf("\n\t\t FD(%f): %f",x0, FD(x0));
+        ea = ErrorA(x1,x0);
+        //printf("\n\t\tError Actual: %f", ea);
+        x0 = x1;
+    }while(ea > es);
+    printf("\n\t\tError Actual: %f", ea);
+    printf("\n\t\t FD(x0): %f", FD(x0));
+    return(x1);
+}
+
+double NewtonRapsonMod(double x0, int n) {
+    printf("\nNewton Rapson Modificado inicializado");
+    double ea = 50.0, es, x1;
+    es = Scarb(n);
+    printf("\n\t\tF(%f)= %f", x0, F(x0));
+    printf("\n\t\tFD(%f)= %f", x0, FD(x0));
+    printf("\n\t\tFD2(%f)= %f", x0, FD2(x0));
+    do{
+        x1 = x0 - ((F(x0) * FD(x0)) / (MyPow(FD(x0), 2) - F(x0) * FD2(x0)));
+        printf("\n\tx1=%f", x1);
+        ea = ErrorA(x1,x0);
+        x0 = x1;
+        printf("\n\tEa= %f", ea);
+    }while(ea > es);
+    return(x1);
 }
 
 double FalsaPosicion(float xi, float xu, int n) {
