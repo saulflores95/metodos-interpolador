@@ -219,3 +219,7 @@ int num_per(int n) {
     }
     return sum;
 }
+
+double ElPow(double x, double y){
+    return exp(y*LogNat(x, 16));
+}

@@ -2,13 +2,13 @@
 
 float FuncEval(float x, float y){
     //return (2 * x);
-    return (8 / (x * x));
+    return 7*ElPow(2, x)*LogNat(2, 16);
 }
 
-double Integrador(double P, double x) {
+double Integrador(double x, double p) {
     printf("\tIntegrador activado...");
-    double newtonMod = NewtonRapsonMod(0.5, 5);
-    printf("\n\t\tNewton Rapson Mod: %f", newtonMod);
+    double newtonMod = NewtonRapsonMod(x, 5);
+    printf("\n\t\tNewton Rapson Mod: %f\n", newtonMod);
     return 0.0;
 
 }
@@ -64,9 +64,9 @@ void BestFit(matriz t, float x) {
     float linearReg =  Array.mtx[0][0]=  RegLinBestFit(t); //Lineal -> a0 + a1X -
     float cuadraticReg = Array.mtx[1][0] = RegCuadBestFit(t,x);//Cuadratica -> a0 + a1X + a2X^2 x -
     float cubicReg = Array.mtx[2][0] = RegCubicBestFit(t, x);//Cubica -> a0 + a1X + a2X^2 + a3X^3 x -
-    float expontialReg = Array.mtx[3][0] = RegExpBestFit(t);//Exponencial -> a0 + e^(A1X) -
     float logaritmicReg = Array.mtx[4][0] = RegLnBestFit(t);//Logaritmica -> a0 + a1 * ln(x) -
     float inverseReg = Array.mtx[5][0] = Abs(RegInvBestFit(t));//Inversa -> a0 + a1/x
+    float expontialReg = Array.mtx[3][0] = RegExpBestFit(t);//Exponencial -> a0 + e^(A1X) -
     float potenciaReg = Array.mtx[6][0] =RegPowBestFit(t);//Potencia -> a0*X^a1
     float distance = Abs(Array.mtx[0][0] - myNumber);
     for(i; i < Array.ren; i++) {
@@ -140,6 +140,7 @@ float RegCubicBestFit(matriz t, float x) {
 
 float RegExpBestFit(matriz t) {
     matriz ans = t;
+    printf("\n\tVerificacion de regresion Exponensial favor de esperar un momento...\n\t");
     int i = 0;
     for(i; i < t.ren; i++){
         ans.mtx[i][1] = LogNat(t.mtx[i][1], 5);
@@ -168,6 +169,7 @@ float RegInvBestFit(matriz t) {
 float RegPowBestFit(matriz t) {
     matriz ans = t;
     int i = 0;
+    printf("\n\tVerificacion de regresion de Potencia favor de esperar un momento...\n\t");
     for(i; i < t.ren; i++){
         ans.mtx[i][0] = LogNat(t.mtx[i][0], 5);
         ans.mtx[i][1] = LogNat(t.mtx[i][1], 5);

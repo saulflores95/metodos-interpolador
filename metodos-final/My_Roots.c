@@ -1,4 +1,5 @@
 #include "My_Roots.h"
+double GlobalVariable;
 
 //Funcion a estimar raiz de paracaidista
 double FParacaidista(double x) {
@@ -22,7 +23,7 @@ double F(double x){
   //ans = LogNat(x, 4) + MyPow(x, 2) - 4;
   //ans = cos(x) - x;
   //ans = (1/sqrt(2 * PI)) * exp(-MyPow(x, 2) / 2);
-  ans = Simpson3M(-5, x, 500)- 0.75;
+  ans = Simpson3M(-5, x, 500)- GlobalVariable;
   return (ans);
 }
 //Derivada a la funcion a estimar raiz
@@ -119,15 +120,17 @@ double NewtonRapson(double x0,int n){
 }
 
 double NewtonRapsonMod(double x0, int n) {
+    printf("Escoje el valor de P: \n\t");
+    scanf("%lf",&GlobalVariable);
     printf("\nNewton Rapson Modificado inicializado");
     double ea = 50.0, es, x1;
     es = Scarb(n);
-    printf("\n\t\tF(%f)= %f", x0, F(x0));
-    printf("\n\t\tFD(%f)= %f", x0, FD(x0));
-    printf("\n\t\tFD2(%f)= %f", x0, FD2(x0));
+    //printf("\n\t\tF(%f)= %f", x0, F(x0));
+    //printf("\n\t\tFD(%f)= %f", x0, FD(x0));
+    //printf("\n\t\tFD2(%f)= %f", x0, FD2(x0));
     do{
         x1 = x0 - ((F(x0) * FD(x0)) / (MyPow(FD(x0), 2) - F(x0) * FD2(x0)));
-        printf("\n\tx1=%f", x1);
+      //  printf("\n\tx1=%f", x1);
         ea = ErrorA(x1,x0);
         x0 = x1;
         printf("\n\tEa= %f", ea);
